@@ -1,5 +1,13 @@
+import Text "mo:base/Text";
+
 actor {
-  public query func greet(name : Text) : async Text {
-    return "Hello, " # name # "!";
+  var obtenerNombre: Text = "";
+
+  public func setName(nombre: Text) : async () {
+    obtenerNombre := nombre;
+  };
+
+  public query func getName() : async Text {
+    return obtenerNombre;
   };
 };
